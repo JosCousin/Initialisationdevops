@@ -3,9 +3,8 @@ def afficher_taches(taches):
         print("Votre liste de tâches est vide.")
     else:
         print("\nListe de tâches :")
-        for i in enumerate(len(taches)):
-            print(i, taches[i])
-    print()
+        for i, tache in enumerate(taches, start=1):  # "start=1" pour débuter l'index à 1
+            print(i, tache)
 
 def ajouter_tache(taches):
     nouvelle_tache = input("Entrez la nouvelle tâche : ")
@@ -31,6 +30,11 @@ def supprimer_tache(taches):
         print("Entrée invalide. Veuillez entrer un numéro.\n")
 
 def ajouter_tache(nouvelle_tache):
+    """
+    Ajoute une nouvelle tâche à la liste des tâches.
+    """
+    ...
+
     taches=[]
     if nouvelle_tache.isdigit():
         return "facho"
