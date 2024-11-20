@@ -1,17 +1,31 @@
+"""
+Module pour gérer une liste de tâches (To-Do List).
+"""
+
 def afficher_taches(taches):
+    """
+    Affiche la liste des tâches avec leurs indices.
+    """
     if len(taches) == 0:
         print("Votre liste de tâches est vide.")
     else:
         print("\nListe de tâches :")
-        for i, tache in enumerate(taches, start=1):  # "start=1" pour débuter l'index à 1
-            print(i, tache)
+        for i, tache in enumerate(taches, start=1):  # Indexation à partir de 1
+            print(f"{i}. {tache}")
+    print()
 
 def ajouter_tache(taches):
+    """
+    Ajoute une nouvelle tâche à la liste.
+    """
     nouvelle_tache = input("Entrez la nouvelle tâche : ")
     taches.append(nouvelle_tache)
     print(f"Tâche ajoutée : {nouvelle_tache}\n")
 
 def supprimer_tache(taches):
+    """
+    Supprime une tâche de la liste en fonction de son index.
+    """
     afficher_taches(taches)
     if len(taches) == 0:
         print("Aucune tâche à supprimer.\n")
@@ -29,17 +43,13 @@ def supprimer_tache(taches):
     else:
         print("Entrée invalide. Veuillez entrer un numéro.\n")
 
-def ajouter_tache(nouvelle_tache):
+def ajouter_tache_test(nouvelle_tache):
     """
-    Ajoute une nouvelle tâche à la liste des tâches.
+    Ajoute une nouvelle tâche à une liste dans un contexte de test unitaire.
+    Retourne une chaîne pour valider les entrées.
     """
-    ...
-
-    taches=[]
+    taches = []
     if nouvelle_tache.isdigit():
         return "facho"
-    else:
-        taches.append(nouvelle_tache)
-        return "c'est good mon gars"
-        
-
+    taches.append(nouvelle_tache)
+    return "c'est good mon gars"
