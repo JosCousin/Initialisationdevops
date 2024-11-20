@@ -3,8 +3,8 @@ def afficher_taches(taches):
         print("Votre liste de tâches est vide.")
     else:
         print("\nListe de tâches :")
-        for i in range(len(taches)):
-            print(f"{i + 1}. {taches[i]}")
+        for i in enumerate(len(taches)):
+            print(i, taches[i])
     print()
 
 def ajouter_tache(taches):
@@ -30,26 +30,12 @@ def supprimer_tache(taches):
     else:
         print("Entrée invalide. Veuillez entrer un numéro.\n")
 
-def gestionnaire_taches():
-    taches = []
-    while True:
-        print("=== Gestionnaire de tâches ===")
-        print("1. Afficher les tâches")
-        print("2. Ajouter une tâche")
-        print("3. Supprimer une tâche")
-        print("4. Quitter")
+def ajouter_tache(nouvelle_tache):
+    taches=[]
+    if nouvelle_tache.isdigit():
+        return "facho"
+    else:
+        taches.append(nouvelle_tache)
+        return "c'est good mon gars"
         
-        choix = input("Choisissez une option : ")
-        if choix == "1":
-            afficher_taches(taches)
-        elif choix == "2":
-            ajouter_tache(taches)
-        elif choix == "3":
-            supprimer_tache(taches)
-        elif choix == "4":
-            print("Au revoir!")
-            break
-        else:
-            print("Option invalide. Veuillez réessayer.\n")
 
-gestionnaire_taches()
